@@ -1,0 +1,15 @@
+<p>updateform works!</p>
+
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="Name" />
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="Email" />
+  </div>
+
+  <button type="submit">Update</button>
+</form>

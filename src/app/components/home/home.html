@@ -1,0 +1,38 @@
+<button (click)="handleFormOpen()">Add User</button>
+
+@if (flag) {
+<button (click)="handleCancellButton()">X</button>
+<app-form></app-form>
+}
+
+@if(editFlag){
+<app-updateform [data]="editFormDetails"></app-updateform>
+}
+
+<hr>
+<h1>List of the Users</h1>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (user of users; track user.id) {
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                <button (click)="handleEdit(user)">Edit</button>
+                <button (click)="handleDelete(user.id)">Delete</button>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
