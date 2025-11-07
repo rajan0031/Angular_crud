@@ -46,11 +46,7 @@ export class Home {
     await this.allUsersService.getAllUsersList(); // refresh user list after form submission 
   }
 
-  async handleEditSubmitted() {
-    this.editFlag = false;
-    this.editFormDetails = null;
-    await this.allUsersService.getAllUsersList(); // refresh user list after edit submission
-  }
+
 
   handleEdit(user: any) {
     this.editFlag = true;

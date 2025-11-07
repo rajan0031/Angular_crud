@@ -7,7 +7,7 @@ import { getAllUser } from '../utils/Users.api';
   providedIn: 'root',
 })
 export class AllUsersService {
-  private usersSubject = new BehaviorSubject<any[]>([]);
+  private usersSubject = new BehaviorSubject<any>([]);
   users$ = this.usersSubject.asObservable();
 
   async getAllUsersList(): Promise<void> {
@@ -19,4 +19,7 @@ export class AllUsersService {
       this.usersSubject.next([]);
     }
   }
+
+
+
 }
